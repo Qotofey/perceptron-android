@@ -2,12 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
     <item
         android:id="@+id/action_add"
-        android:title="Add"
-        android:icon="@drawable/ic_add_white_24dp"
+        android:title="Learn"
+        android:icon="@drawable/ic_add_white_36dp"
         app:showAsAction="always">
 
     </item>
+
+    <item
+        android:id="@+id/action_learn"
+        android:title="Add"
+        android:icon="@drawable/ic_learn_white_36dp"
+        app:showAsAction="always">
+
+    </item>
+
 
 </menu>

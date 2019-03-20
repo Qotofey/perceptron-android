@@ -1,17 +1,20 @@
 package ru.qotofey.perceptron.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
-import ru.qotofey.perceptron.R;
+import ru.qotofey.perceptron.view.fragment.SampleFragment;
 
-public class SampleActivity extends AppCompatActivity {
+public class SampleActivity extends SingleFragmentActivity {
+
+    @Override
+    protected Fragment createFragment() {
+        return new SampleFragment();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
