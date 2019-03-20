@@ -27,6 +27,7 @@ public class SampleListActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add: {
                 Intent intent = new Intent(this, SampleActivity.class);
+                startActivity(intent);
             }
         }
         return super.onOptionsItemSelected(item);
