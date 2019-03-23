@@ -6,6 +6,7 @@ import ru.qotofey.perceptron.di.component.AppComponent;
 import ru.qotofey.perceptron.di.component.DaggerAppComponent;
 import ru.qotofey.perceptron.di.module.AppModule;
 import ru.qotofey.perceptron.di.module.RestModule;
+import ru.qotofey.perceptron.di.module.SampleStorageModule;
 
 public class App extends Application {
 
@@ -24,8 +25,9 @@ public class App extends Application {
     private void initDagger() {
         sAppComponent = DaggerAppComponent
                 .builder()
-                .appModule(new AppModule(this))
-                .restModule(new RestModule())
+//                .appModule(new AppModule(this))
+//                .restModule(new RestModule())
+//                .sampleStorageModule(new SampleStorageModule(this))
                 .build();
     }
 }

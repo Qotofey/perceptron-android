@@ -1,12 +1,38 @@
 package ru.qotofey.perceptron.di.module;
 
-import android.content.Context;
+import javax.inject.Singleton;
 
 import dagger.Module;
+import dagger.Provides;
+import ru.qotofey.perceptron.net.rest.api.AnswersApi;
+import ru.qotofey.perceptron.net.rest.api.QuestionsApi;
+import ru.qotofey.perceptron.net.RestClient;
 
 @Module
 public class RestModule {
 
-    public RestModule(Context context) {
+    private RestClient mRestClient;
+
+    public RestModule() {
+        mRestClient = new RestClient();
     }
+
+    @Provides
+    @Singleton
+    RestClient provideRestClient() {
+        return mRestClient;
+    }
+
+    @Provides
+    @Singleton
+    AnswersApi provideAnswersApi() {
+        return mRestClient.createService(AnswersApi.class);
+    }
+
+    @Provides
+    @Singleton
+    QuestionsApi provideQuestionsApi() {
+        return mRestClient.createService(QuestionsApi.class);
+    }
+
 }

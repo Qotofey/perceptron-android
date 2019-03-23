@@ -9,7 +9,13 @@
         android:title="Learn"
         android:icon="@drawable/ic_add_white_36dp"
         app:showAsAction="always">
+    </item>
 
+    <item
+        android:id="@+id/action_build"
+        android:title="Build"
+        android:icon="@drawable/ic_build_white_24dp"
+        app:showAsAction="always">
     </item>
 
     <item
@@ -17,7 +23,6 @@
         android:title="Add"
         android:icon="@drawable/ic_learn_white_36dp"
         app:showAsAction="always">
-
     </item>
 
 
