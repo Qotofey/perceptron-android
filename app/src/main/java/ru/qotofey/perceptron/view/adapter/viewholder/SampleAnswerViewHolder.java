@@ -24,4 +24,6 @@ public class SampleAnswerViewHolder extends AbstractSampleViewHolder<SampleAnswe
     public void unbind() {
         mAnswerTextView.setText(null);
     }
+
+
 }

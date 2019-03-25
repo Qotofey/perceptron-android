@@ -12,9 +12,9 @@ public class Answer {
     @SerializedName("text")
     @Expose
     public String text;
-    @SerializedName("vector")
-    @Expose
-    public List<Long> vector = null;
+//    @SerializedName("vector")
+//    @Expose
+//    public List<Long> vector = null;
     @SerializedName("created_at")
     @Expose
     public String createdAt;

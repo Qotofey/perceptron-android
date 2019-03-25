@@ -25,9 +25,9 @@ public class App extends Application {
     private void initDagger() {
         sAppComponent = DaggerAppComponent
                 .builder()
-//                .appModule(new AppModule(this))
-//                .restModule(new RestModule())
-//                .sampleStorageModule(new SampleStorageModule(this))
+                .appModule(new AppModule(this))
+                .restModule(new RestModule())
+                .sampleStorageModule(new SampleStorageModule(this))
                 .build();
     }
 }

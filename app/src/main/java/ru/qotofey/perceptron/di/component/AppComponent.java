@@ -6,6 +6,9 @@ import dagger.Component;
 import ru.qotofey.perceptron.di.module.AppModule;
 import ru.qotofey.perceptron.di.module.RestModule;
 import ru.qotofey.perceptron.di.module.SampleStorageModule;
+import ru.qotofey.perceptron.presenter.BasePresenter;
+import ru.qotofey.perceptron.presenter.SampleListPresenter;
+import ru.qotofey.perceptron.presenter.SamplePresenter;
 import ru.qotofey.perceptron.view.activity.AboutActivity;
 import ru.qotofey.perceptron.view.activity.SampleActivity;
 import ru.qotofey.perceptron.view.activity.SampleListActivity;
@@ -24,16 +27,20 @@ import ru.qotofey.perceptron.view.fragment.SampleListFragment;
 public interface AppComponent {
 
     //activities
-//    void inject(SingleFragmentActivity activity); //abstract
+    void inject(SingleFragmentActivity activity); //abstract
     void inject(SampleActivity activity);
     void inject(SampleListActivity activity);
     void inject(AboutActivity activity);
 
     //fragments
-//    void inject(BaseFragment fragment); //abstract
+    void inject(BaseFragment fragment); //abstract
     void inject(SampleFragment fragment);
     void inject(SampleListFragment fragment);
-//    void inject(AboutFragment fragment);
+
+//    //presenters
+//    void inject(BasePresenter presenter);
+//    void inject(SamplePresenter presenter);
+//    void inject(SampleListPresenter presenter);
 
 
 }
