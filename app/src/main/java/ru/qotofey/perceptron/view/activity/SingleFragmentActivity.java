@@ -1,5 +1,6 @@
 package ru.qotofey.perceptron.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import ru.qotofey.perceptron.R;
 
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
+    protected final String TAG = this.getClass().getName();
 
     protected abstract Fragment createFragment();
 

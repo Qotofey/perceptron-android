@@ -13,7 +13,7 @@ public class SampleStorageModule {
 
     private SampleStorage mSampleStorage;
 
-    public SampleStorageModule(Context context) {
+    public SampleStorageModule() {
         mSampleStorage = new SampleStorage();
     }
 

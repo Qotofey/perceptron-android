@@ -14,7 +14,9 @@ public class RestModule {
     private RestClient mRestClient;
 
     public RestModule() {
-        mRestClient = new RestClient();
+        if (mRestClient == null) {
+            mRestClient = new RestClient();
+        }
     }
 
     @Provides

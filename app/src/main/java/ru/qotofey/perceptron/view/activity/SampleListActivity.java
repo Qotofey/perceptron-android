@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import ru.qotofey.perceptron.R;
+import ru.qotofey.perceptron.model.Sample;
 import ru.qotofey.perceptron.view.fragment.SampleListFragment;
 
 public class SampleListActivity extends SingleFragmentActivity {
@@ -38,21 +39,28 @@ public class SampleListActivity extends SingleFragmentActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_add:
-                Intent intent = new Intent(this, SampleActivity.class);
+            case R.id.action_add: {
+                Intent intent = new Intent(this, SampleNewActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.action_build:
-                Toast.makeText(this, "Нельзя построить!", Toast.LENGTH_SHORT).show();
+            }
+            case R.id.action_build: {
+//                Toast.makeText(this, "Нельзя построить!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, SampleActivity.class);
+                startActivity(intent);
 //                Snackbar.make(this, "Нельзя построить!", Snackbar.LENGTH_SHORT).show();
                 break;
-            case R.id.action_learn:
+            }
+            case R.id.action_learn: {
                 Toast.makeText(this, "Нельзя тренировать!", Toast.LENGTH_SHORT).show();
                 break;
-            default:
+            }
+            default: {
                 Toast.makeText(this, "Default", Toast.LENGTH_SHORT).show();
                 Log.i("MenuItem", "не может быть");
+            }
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -27,7 +27,7 @@ public class App extends Application {
                 .builder()
                 .appModule(new AppModule(this))
                 .restModule(new RestModule())
-                .sampleStorageModule(new SampleStorageModule(this))
+                .sampleStorageModule(new SampleStorageModule())
                 .build();
     }
 }

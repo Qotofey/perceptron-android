@@ -37,10 +37,10 @@ public interface AppComponent {
     void inject(SampleFragment fragment);
     void inject(SampleListFragment fragment);
 
-//    //presenters
-//    void inject(BasePresenter presenter);
-//    void inject(SamplePresenter presenter);
-//    void inject(SampleListPresenter presenter);
+    //presenters
+    void inject(BasePresenter presenter);
+    void inject(SamplePresenter presenter);
+    void inject(SampleListPresenter presenter);
 
 
 }
