@@ -12,6 +12,7 @@ import ru.qotofey.perceptron.net.rest.model.response.Answer;
 import ru.qotofey.perceptron.net.rest.model.response.Question;
 
 public class SampleStorage {
+    protected final String TAG = this.getClass().getName();
 
     private List<Sample> mSampleList;
 
@@ -54,7 +55,9 @@ public class SampleStorage {
 
     public Sample getSample(UUID id) {
         for (Sample sample : mSampleList) {
-            if (sample.getId() == id) {
+            Log.i(TAG, "Аргумент ID: " + id);
+            Log.i(TAG, "ID выбокри: " + sample.getId());
+            if (sample.getId().equals(id)) {
                 return sample;
             }
         }

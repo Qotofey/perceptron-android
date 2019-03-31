@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +17,14 @@ import ru.qotofey.perceptron.model.Sample;
 import ru.qotofey.perceptron.presenter.SamplePresenter;
 import ru.qotofey.perceptron.view.SampleView;
 import ru.qotofey.perceptron.view.activity.SampleActivity;
+import ru.qotofey.perceptron.view.adapter.SampleAdapter;
 
 public class SampleFragment extends BaseFragment implements SampleView {
-//    private static final String PARAM_SAMPLE_ID = "param_sample_id";
-//    private static final String PARAM_ANSWER_ID = "param_answer_id";
-//    private static final String PARAM_QUESTION_ID = "param_question_id";
 
     private SamplePresenter mPresenter;
 
-    private TextView mAnswerBodyTextView;
+    private RecyclerView mRecyclerView;
+    private SampleAdapter mAdapter;
 
     public SampleFragment() {
         // Required empty public constructor
@@ -42,7 +42,8 @@ public class SampleFragment extends BaseFragment implements SampleView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_simple, container, false);
-        mAnswerBodyTextView = view.findViewById(R.id.answerBodyTextView);
+        mRecyclerView = view.findViewById(R.id.recyclerView);
+//        mAnswerBodyTextView = view.findViewById(R.id.answerBodyTextView);
         return view;
     }
 
@@ -64,7 +65,7 @@ public class SampleFragment extends BaseFragment implements SampleView {
 
     @Override
     public void renderSample(Sample sample) {
-        mAnswerBodyTextView.setText(sample.getAnswer().text);
+//        mAnswerBodyTextView.setText(sample.getAnswer().text);
     }
 
     @Override

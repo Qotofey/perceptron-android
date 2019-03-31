@@ -78,6 +78,7 @@ public class SampleListFragment extends Fragment implements SampleListView  {
         super.onViewCreated(view, savedInstanceState);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new SampleListAdapter();
+        mAdapter.onItemClickListener = mOnItemClickListener;
         mRecyclerView.setAdapter(mAdapter);
         mPresenter.init();
     }

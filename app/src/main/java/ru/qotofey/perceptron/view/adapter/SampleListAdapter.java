@@ -18,7 +18,7 @@ public class SampleListAdapter extends RecyclerView.Adapter<SampleViewHolder> {
         void onUserItemClicked(Sample sample);
     }
 
-    public OnItemClickListener mOnItemClickListener;
+    public OnItemClickListener onItemClickListener;
 
     private List<SampleModelHolder> mList;
 
@@ -37,7 +37,7 @@ public class SampleListAdapter extends RecyclerView.Adapter<SampleViewHolder> {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mOnItemClickListener.onUserItemClicked(getItem(i).getSample());
+                onItemClickListener.onUserItemClicked(getItem(i).getSample());
             }
         });
     }

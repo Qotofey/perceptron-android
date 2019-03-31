@@ -25,7 +25,8 @@ public abstract class AbstractSampleModelHolder {
     public enum LayoutTypes {
 
         ItemSampleAnswer(R.layout.item_sample_answer),
-        ItemSampleQuestion(R.layout.item_sample_question);
+        ItemSampleQuestion(R.layout.item_sample_question),
+        ItemTitle(R.layout.item_title);
 
         private final int mId;
 

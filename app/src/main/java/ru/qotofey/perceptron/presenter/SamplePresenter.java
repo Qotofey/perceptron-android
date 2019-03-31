@@ -1,5 +1,7 @@
 package ru.qotofey.perceptron.presenter;
 
+import android.util.Log;
+
 import java.util.UUID;
 
 import javax.inject.Inject;
@@ -24,6 +26,7 @@ public class SamplePresenter extends BasePresenter {
     }
 
     public void setModel(UUID sampleId) {
+        Log.i(TAG, "Размерность списка выборки: " + mStorage.getSampleList().size());
         mSample = mStorage.getSample(sampleId);
     }
 
