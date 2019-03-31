@@ -47,7 +47,7 @@
                 android:layout_marginEnd="16dp"
                 android:lines="1"
                 android:singleLine="true"
-                android:text="Ответ"
+                tools:text="Ответ"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/editAnswerButton"
                 app:layout_constraintHorizontal_bias="0.0"

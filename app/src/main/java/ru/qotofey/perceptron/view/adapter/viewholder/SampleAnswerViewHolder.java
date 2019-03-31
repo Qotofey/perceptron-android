@@ -12,7 +12,7 @@ public class SampleAnswerViewHolder extends AbstractSampleViewHolder<SampleAnswe
 
     public SampleAnswerViewHolder(View itemView) {
         super(itemView);
-        mAnswerTextView = (TextView) itemView.findViewById(R.id.answerTextView);
+        mAnswerTextView = itemView.findViewById(R.id.answerTextView);
     }
 
     @Override

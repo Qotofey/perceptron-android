@@ -1,26 +1,15 @@
 package ru.qotofey.perceptron.presenter;
 
-import android.util.Log;
-
-import java.util.List;
-
 import javax.inject.Inject;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import ru.qotofey.perceptron.App;
+import ru.qotofey.perceptron.model.Sample;
 import ru.qotofey.perceptron.model.SampleStorage;
 import ru.qotofey.perceptron.net.rest.api.AnswersApi;
 import ru.qotofey.perceptron.net.rest.api.QuestionsApi;
-import ru.qotofey.perceptron.net.rest.model.response.Answer;
-import ru.qotofey.perceptron.net.rest.model.response.Question;
 import ru.qotofey.perceptron.view.SampleListView;
 
 public class SampleListPresenter extends BasePresenter {
@@ -49,7 +38,9 @@ public class SampleListPresenter extends BasePresenter {
 
     }
 
-
+    public void onUserClicked(Sample sample) {
+        this.mView.viewSample(sample);
+    }
 
     //порядок загрузки может быть случайным, требуется явно указать последовательность загрузки
     private void loadDataFromNet() {
@@ -77,6 +68,8 @@ public class SampleListPresenter extends BasePresenter {
 
         }
     };
+
+
 
 
 }

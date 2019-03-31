@@ -12,7 +12,7 @@ import ru.qotofey.perceptron.R;
 import ru.qotofey.perceptron.model.Sample;
 import ru.qotofey.perceptron.view.fragment.SampleListFragment;
 
-public class SampleListActivity extends SingleFragmentActivity {
+public class SampleListActivity extends SingleFragmentActivity implements SampleListFragment.SampleListListener {
 
     @Override
     protected int getLayoutResId() {
@@ -27,7 +27,12 @@ public class SampleListActivity extends SingleFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_sample_list);
+    }
+
+    @Override
+    public void onSampleClicked(Sample sample) {
+        Intent intent = SampleActivity.createIntent(this, sample.getId());
+        startActivity(intent);
     }
 
     @Override

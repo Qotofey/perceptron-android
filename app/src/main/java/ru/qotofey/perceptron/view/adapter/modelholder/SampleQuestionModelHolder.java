@@ -8,11 +8,9 @@ import ru.qotofey.perceptron.view.adapter.viewholder.SampleQuestionViewHolder;
 
 public class SampleQuestionModelHolder extends AbstractSampleModelHolder {
 
-    private long mId;
     private String mText;
 
     public SampleQuestionModelHolder(Question question) {
-        mId = question.id;
         mText = question.text;
     }
 
