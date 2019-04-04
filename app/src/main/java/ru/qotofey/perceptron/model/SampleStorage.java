@@ -25,6 +25,7 @@ public class SampleStorage {
     }
 
     public SampleStorage insertAnswerList(List<Answer> answerList) {
+        mSampleList.clear();
         for (Answer answer : answerList) {
             boolean isExist = false;
             for (Sample sample : mSampleList) {
@@ -36,6 +37,12 @@ public class SampleStorage {
             if (!isExist) mSampleList.add(new Sample(answer));
         }
         return this;
+    }
+
+    private Sample mSample;
+
+    public void addSample(Sample sample) {
+        mSampleList.add(sample);
     }
 
     public SampleStorage insertQuestionList(List<Question> questionList) {
@@ -66,6 +73,8 @@ public class SampleStorage {
 
     public AnswerListObserver answerListObserver = new AnswerListObserver();
     public QuestionListObserver questionListObserver = new QuestionListObserver();
+    public AnswerObserver answerObserver = new AnswerObserver();
+    public QuestionObserver questionObserver = new QuestionObserver();
 
     public class AnswerListObserver implements Observer<List<Answer>> {
 
@@ -90,6 +99,27 @@ public class SampleStorage {
         }
 
     }
+    public class AnswerObserver implements Observer<Answer> {
+        @Override
+        public void onSubscribe(Disposable d) {
+
+        }
+
+        @Override
+        public void onNext(Answer answer) {
+            mSample = new Sample(answer);
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            e.printStackTrace();
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    }
 
     public class QuestionListObserver implements Observer<List<Question>> {
 
@@ -101,6 +131,29 @@ public class SampleStorage {
         @Override
         public void onNext(List<Question> questionList) {
             SampleStorage.this.insertQuestionList(questionList);
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            e.printStackTrace();
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    }
+    public class QuestionObserver implements Observer<Question> {
+
+        @Override
+        public void onSubscribe(Disposable d) {
+
+        }
+
+        @Override
+        public void onNext(Question question) {
+            mSample.setQuestion(question);
+            mSampleList.add(mSample);
         }
 
         @Override

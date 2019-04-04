@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import ru.qotofey.perceptron.net.rest.api.AnswersApi;
+import ru.qotofey.perceptron.net.rest.api.PerceptronApi;
 import ru.qotofey.perceptron.net.rest.api.QuestionsApi;
 import ru.qotofey.perceptron.net.RestClient;
 
@@ -36,5 +37,13 @@ public class RestModule {
     QuestionsApi provideQuestionsApi() {
         return mRestClient.createService(QuestionsApi.class);
     }
+
+    @Provides
+    @Singleton
+    PerceptronApi providePerceptronApi() {
+        return mRestClient.createService(PerceptronApi.class);
+    }
+
+
 
 }

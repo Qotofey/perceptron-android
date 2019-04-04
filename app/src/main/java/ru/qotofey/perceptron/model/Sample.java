@@ -49,6 +49,11 @@ public class Sample {
         return mQuestionList.get(0);
     }
 
+    public Sample setQuestion(Question question) {
+        mQuestionList.add(question);
+        return this;
+    }
+
     public List<Question> getQuestionList() {
         return mQuestionList;
     }

@@ -33,13 +33,17 @@ public class SampleListAdapter extends RecyclerView.Adapter<SampleViewHolder> {
 
     @Override
     public void onBindViewHolder(SampleViewHolder viewHolder, final int i) {
-        viewHolder.bind(getItem(i));
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickListener.onUserItemClicked(getItem(i).getSample());
-            }
-        });
+        try {
+            viewHolder.bind(getItem(i));
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClickListener.onUserItemClicked(getItem(i).getSample());
+                }
+            });
+        } catch(IndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

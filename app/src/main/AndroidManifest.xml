@@ -27,6 +27,7 @@
 
         <activity
             android:name=".view.activity.SampleActivity"
+            android:label="Обучающая выборка"
             android:parentActivityName=".view.activity.SampleListActivity">
 
         </activity>

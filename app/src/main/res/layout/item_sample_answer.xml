@@ -17,7 +17,7 @@
         android:ellipsize="end"
         android:maxLines="4"
         android:text="answer"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editButton"
         app:layout_constraintStart_toStartOf="parent"
