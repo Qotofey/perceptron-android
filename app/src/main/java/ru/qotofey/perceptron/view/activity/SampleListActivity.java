@@ -3,6 +3,7 @@ package ru.qotofey.perceptron.view.activity;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import ru.qotofey.perceptron.R;
 import ru.qotofey.perceptron.model.Sample;
 import ru.qotofey.perceptron.view.fragment.SampleListFragment;
+import ru.qotofey.perceptron.view.fragment.dialog.NewSampleFragment;
 
 public class SampleListActivity extends SingleFragmentActivity implements SampleListFragment.SampleListListener {
 
@@ -45,8 +47,11 @@ public class SampleListActivity extends SingleFragmentActivity implements Sample
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add: {
-                Intent intent = new Intent(this, SampleNewActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(this, SampleNewActivity.class);
+//                startActivity(intent);
+                FragmentManager manager = getSupportFragmentManager();
+                NewSampleFragment dialog = new NewSampleFragment();
+                dialog.show(manager, "NewSampleDialog");
                 break;
             }
             case R.id.action_build: {

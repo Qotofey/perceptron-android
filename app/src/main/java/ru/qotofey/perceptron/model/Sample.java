@@ -23,11 +23,15 @@ public class Sample {
         this(UUID.randomUUID(), answer);
     }
 
-    public Sample distribute(List<Question> questionList) {
+    public void distributeOne(Question question) {
+        if (mAnswer.id.equals(question.answerId)) {
+            mQuestionList.add(question);
+        }
+    }
+
+    public Sample distributeMany(List<Question> questionList) {
         for (Question question : questionList) {
-            if (mAnswer.id.equals(question.answerId)) {
-                mQuestionList.add(question);
-            }
+            distributeOne(question);
         }
         return this;
     }

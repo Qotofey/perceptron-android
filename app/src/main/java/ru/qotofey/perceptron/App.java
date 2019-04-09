@@ -2,6 +2,8 @@ package ru.qotofey.perceptron;
 
 import android.app.Application;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import ru.qotofey.perceptron.di.component.AppComponent;
 import ru.qotofey.perceptron.di.component.DaggerAppComponent;
 import ru.qotofey.perceptron.di.module.AppModule;
@@ -20,6 +22,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         initDagger();
+        initRealm();
     }
 
     private void initDagger() {
@@ -29,5 +32,13 @@ public class App extends Application {
                 .restModule(new RestModule())
                 .sampleStorageModule(new SampleStorageModule())
                 .build();
+    }
+
+    private void initRealm() {
+        Realm.init(this);
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        Realm.setDefaultConfiguration(realmConfiguration);
     }
 }

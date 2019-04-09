@@ -24,17 +24,22 @@ public class SampleStorage {
         mSampleList = new ArrayList<>();
     }
 
+    public SampleStorage insertAnswer(Answer newAnswer) {
+        boolean isExist = false;
+        for (Sample sample : mSampleList) {
+            if (sample.getAnswer().id.equals(newAnswer.id)) {
+                isExist = true;
+                return null;
+            }
+        }
+        if (!isExist) mSampleList.add(new Sample(newAnswer));
+        return this;
+    }
+
     public SampleStorage insertAnswerList(List<Answer> answerList) {
         mSampleList.clear();
         for (Answer answer : answerList) {
-            boolean isExist = false;
-            for (Sample sample : mSampleList) {
-                if (sample.getAnswer().id.equals(answer.id)) {
-                    isExist = true;
-                    break;
-                }
-            }
-            if (!isExist) mSampleList.add(new Sample(answer));
+            insertAnswer(answer);
         }
         return this;
     }
@@ -47,7 +52,7 @@ public class SampleStorage {
 
     public SampleStorage insertQuestionList(List<Question> questionList) {
         for (Sample sample : mSampleList) {
-            sample.distribute(questionList);
+            sample.distributeMany(questionList);
         }
         return this;
     }
@@ -166,5 +171,6 @@ public class SampleStorage {
 
         }
     }
+
 
 }

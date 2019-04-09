@@ -3,8 +3,12 @@ package ru.qotofey.perceptron.net.rest.model.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Answer {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+public class Answer extends RealmObject {
+
+    @PrimaryKey
     @SerializedName("id")
     @Expose
     public Long id;

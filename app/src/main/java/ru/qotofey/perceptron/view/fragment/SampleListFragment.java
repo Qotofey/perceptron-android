@@ -22,9 +22,9 @@ import ru.qotofey.perceptron.view.adapter.SampleListAdapter;
 import ru.qotofey.perceptron.view.adapter.modelholder.SampleModelHolder;
 
 
-public class SampleListFragment extends Fragment implements SampleListView  {
+public class SampleListFragment extends BaseFragment implements SampleListView  {
 
-    private static final String TAG = SampleListFragment.class.getName();
+    private static final String DIALOG_NEW_SAMPLE= "DialogNewSample";
 
     public interface SampleListListener {
         void onSampleClicked(final Sample sample);
